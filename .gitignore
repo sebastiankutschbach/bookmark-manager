@@ -11,4 +11,4 @@ build/
 doc/api/
 
 # config file for firebase credentials
-#src/credentials.dart
+src/credentials.dart
