@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+    <a href="#" class="navbar-brand">Bookmark Manager</a>
+</nav>
+<div class="container">
+    <div class="col-sm-12">
+        <div class="alert text-center" *ngIf="!isLoading && bookmarks.isEmpty">
+            No bookmarks added.
+        </div>
+        <div class="alert text-center" *ngIf="isLoading">
+            Fetching bookmarks from the database.
+        </div>
+    </div>
+    <div class="row" *ngIf="bookmarks.isNotEmpty">
+        <div class="col-md-4 mb-3" *ngFor="let bookmark of bookmarks; let $i = index">
+            <div class="card">
+                <div class="card-body mx-2" *ngIf="!bookmark.edit">
+                    <h5 class="card-title">{{bookmark.title}}</h5>
+                    <p class="card-text">{{bookmark.description}}</p>
+                    <a [href]="bookmark.url" class="btn btn-primary">Go to website</a>
+                    <div class="btn btn-warning" (click)="editBookmark($i)">Edit</div>
+                    <div class="btn btn-danger" (click)="removeBookmark($i)">Delete</div>
+                </div>
+            </div>
+            <!-- Edit mode -->
+            <div class="card">
+                <div class="card-body" *ngIf="bookmark.edit">
+                    <bm-form [bookmark]="bookmark" (onDelete)="removeBookmark($i)" (onUpdate)="updateBookmark($i)">
+                    </bm-form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <button (click)="addBookmark()" class="btn btn-block btn-lg btn-outline-success">+ Add a bookmark</button>
+        </div>
+    </div>
+</div>

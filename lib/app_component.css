@@ -1,0 +1,30 @@
+#header {
+    width: 100%;
+    height: 10vh;
+    background-color: accent;
+    color: primary;
+}
+
+#master-view {
+    width: 30%;
+    background-color: blue;
+    float: left;
+    height: 80vw;
+    overflow: auto;
+}
+
+#detail-view {
+    width: 70%;
+    background-color: brown;
+    float: right;
+    height: 80vh;
+}
+
+#footer {
+    width: 100%;
+    height: 10vh;
+    text-align: end;
+    background-color: accent;
+    color: primary;
+
+}
