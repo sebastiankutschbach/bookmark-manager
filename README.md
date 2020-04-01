@@ -1,3 +1,5 @@
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/sebastiankutschbach/bookmark_manager) 
+
 # Bookmark Manager
 
 A web app that uses [AngularDart](https://webdev.dartlang.org/angular) and
